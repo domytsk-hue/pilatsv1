@@ -1,4 +1,4 @@
-# Pilates en Casa · Ximena Robles
+# Pilates en Casa · Daniela Fuentes
 
 Variação visual **Rosa Suave**. Área de alunas em espanhol mexicano: login só com telefone (+ nome opcional), painel com progresso,
 3 módulos (Desafío 24 aulas, Estiramientos 3, Fortalecimiento 3), página da aula com vídeo do

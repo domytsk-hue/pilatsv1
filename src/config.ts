@@ -5,7 +5,7 @@
 // ─────────────────────────────────────────────────────────────
 
 export const BRAND = {
-  instructor: 'Ximena Robles',
+  instructor: 'Daniela Fuentes',
   courseTitle: 'Pilates en Casa',
   tagline: 'Tu cuerpo fuerte, tu mente en calma. Todo desde tu casa.',
   badge: 'PILATES EN CASA',
