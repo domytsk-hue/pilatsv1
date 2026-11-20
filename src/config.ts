@@ -1,7 +1,8 @@
 // ─────────────────────────────────────────────────────────────
 //  Todo lo editable del curso está aquí: marca, checkout y clases.
-//  Para cada clase, pega el ID del video de YouTube (no listado):
-//  https://youtu.be/AbCdEf12345  →  youtube: 'AbCdEf12345'
+//  Los videos están en Bunny Stream. Para cada clase, pega el Video ID
+//  (GUID) que aparece en Bunny → Stream → tu video:
+//  1a2b3c4d-1111-2222-3333-444455556666  →  video: '1a2b3c4d-1111-2222-3333-444455556666'
 // ─────────────────────────────────────────────────────────────
 
 export const BRAND = {
@@ -22,13 +23,16 @@ export const CHECKOUT = {
   note: 'Paga únicamente a través del enlace oficial que aparece aquí.',
 }
 
-export type Lesson = { id: string; title: string; youtube: string }
+// Video Library ID de Bunny Stream (público; la API Key nunca va aquí).
+export const BUNNY_LIBRARY_ID = '815437'
+
+export type Lesson = { id: string; title: string; video: string }
 export type Module = { id: string; number: number; title: string; lessons: Lesson[] }
 
-// [día, ID del video de YouTube]
-const DESAFIO_YT: [string, string][] = [
+// [día, Video ID de Bunny Stream]
+const DESAFIO_VIDEOS: [string, string][] = [
   ['01', ''],
-  ['02', ''],
+  ['02', 'efe288d8-45bd-4a23-8376-80968ec0bfad'],
   ['03', ''],
   ['04', ''],
   ['05', ''],
@@ -53,24 +57,24 @@ const DESAFIO_YT: [string, string][] = [
   ['24', ''],
 ]
 
-const desafio: Lesson[] = DESAFIO_YT.map(([n, youtube]) => ({ id: `desafio-${n}`, title: `Desafío Día ${n}`, youtube }))
+const desafio: Lesson[] = DESAFIO_VIDEOS.map(([n, video]) => ({ id: `desafio-${n}`, title: `Desafío Día ${n}`, video }))
 
 export const MODULES: Module[] = [
   { id: 'desafio', number: 1, title: 'Desafío', lessons: desafio },
   {
     id: 'estiramientos', number: 2, title: 'Estiramientos',
     lessons: [
-      { id: 'estiramiento-01', title: 'Estiramiento 01', youtube: '' },
-      { id: 'estiramiento-02', title: 'Estiramiento 02', youtube: '' },
-      { id: 'estiramiento-03', title: 'Estiramiento 03', youtube: '' },
+      { id: 'estiramiento-01', title: 'Estiramiento 01', video: '' },
+      { id: 'estiramiento-02', title: 'Estiramiento 02', video: '' },
+      { id: 'estiramiento-03', title: 'Estiramiento 03', video: '' },
     ],
   },
   {
     id: 'fortalecimiento', number: 3, title: 'Fortalecimiento',
     lessons: [
-      { id: 'fortalecimiento-01', title: 'Fortalecimiento 01', youtube: '' },
-      { id: 'fortalecimiento-02', title: 'Fortalecimiento 02', youtube: '' },
-      { id: 'fortalecimiento-03', title: 'Fortalecimiento 03', youtube: '' },
+      { id: 'fortalecimiento-01', title: 'Fortalecimiento 01', video: '' },
+      { id: 'fortalecimiento-02', title: 'Fortalecimiento 02', video: '' },
+      { id: 'fortalecimiento-03', title: 'Fortalecimiento 03', video: '87a628f3-5eae-44ce-9b10-711c58dfe1a5' },
     ],
   },
 ]

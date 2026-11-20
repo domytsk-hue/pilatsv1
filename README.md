@@ -2,7 +2,7 @@
 
 Variação visual **Rosa Suave**. Área de alunas em espanhol mexicano: login só com telefone (+ nome opcional), painel com progresso,
 3 módulos (Desafío 24 aulas, Estiramientos 3, Fortalecimiento 3), página da aula com vídeo do
-YouTube não listado, marcar como concluída, avaliação por estrelas e aviso de pagamento com link
+Bunny Stream, marcar como concluída, avaliação por estrelas e aviso de pagamento com link
 de checkout.
 
 **Stack:** React 19 + Vite + TypeScript · React Router · Supabase (Postgres) · Vercel.
@@ -12,11 +12,12 @@ de checkout.
 | O quê | Arquivo |
 |---|---|
 | Nome, título, frase do topo | `src/config.ts` → `BRAND` |
-| IDs dos vídeos do YouTube | `src/config.ts` → `MODULES` (campo `youtube`) |
+| IDs dos vídeos (Bunny Stream) | `src/config.ts` → `DESAFIO_VIDEOS` e `MODULES` (campo `video`) |
 | Textos do aviso de pagamento | `src/config.ts` → `CHECKOUT` |
 | Cores e fontes | `src/index.css` (`:root`) |
 
-O ID do YouTube é o trecho depois de `youtu.be/` ou `watch?v=`. Aula sem ID mostra
+O ID do vídeo é o Video ID (GUID) que aparece no Bunny → Stream → vídeo. A biblioteca é a 815437
+(`BUNNY_LIBRARY_ID`). A API Key do Bunny **nunca** vai no código. Aula sem ID mostra
 "Video disponible pronto".
 
 ## Variáveis de ambiente (Vercel → Settings → Environment Variables)

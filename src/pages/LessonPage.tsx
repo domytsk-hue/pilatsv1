@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom'
-import { findLesson } from '../config'
+import { BUNNY_LIBRARY_ID, findLesson } from '../config'
 import { useApp } from '../lib/app-state'
 import { logView } from '../lib/store'
 
@@ -12,7 +12,7 @@ export function LessonPage() {
   const box = useRef<HTMLDivElement>(null)
   const [reloadKey, setReloadKey] = useState(0)
   const [hover, setHover] = useState(0)
-  // El YouTube solo se carga cuando la alumna toca play (portada propia hasta entonces).
+  // El video de Bunny solo se carga cuando la alumna toca play (portada propia hasta entonces).
   const [playing, setPlaying] = useState<string | null>(null)
 
   useEffect(() => { if (student && found) logView(student.phone, found.lesson.id) }, [student, found?.lesson.id]) // eslint-disable-line react-hooks/exhaustive-deps
@@ -22,8 +22,8 @@ export function LessonPage() {
   const state = progress[lesson.id]
   const done = !!state?.completed
   const rating = state?.rating ?? 0
-  const src = lesson.youtube
-    ? `https://www.youtube-nocookie.com/embed/${lesson.youtube}?rel=0&modestbranding=1&playsinline=1&autoplay=1`
+  const src = lesson.video
+    ? `https://iframe.mediadelivery.net/embed/${BUNNY_LIBRARY_ID}/${lesson.video}?autoplay=true&preload=true&responsive=true`
     : ''
   const isPlaying = playing === lesson.id
 
